@@ -5,7 +5,11 @@ Rails.application.routes.draw do
   
   root 'wordbooks#index'
   resources :wordbooks do
-    resources :words
+    resources :words do
+      member do
+        put 'toggle_hidden'
+      end
+    end
   end
   
 end
